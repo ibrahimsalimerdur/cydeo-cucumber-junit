@@ -16,5 +16,13 @@ public class Login_StepDefinitions {
     public void user_should_see_the_dashboard() {
 
     }
+    @When("user enters student username")
+    public void user_enters_student_username() {
+
+    }
+    @When("user enters student password")
+    public void user_enters_student_password() {
+
+    }
 
 }
