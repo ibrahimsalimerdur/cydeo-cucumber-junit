@@ -7,35 +7,34 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
 
-    @Before ("@student")
-    public void setupScenario (){
+    @Before("@student")
+    public void setupScenario() {
         System.out.println("====Seting Up browser using cucumber @Before");
     }
 
     @After
-    public void tearDownScenario (Scenario scenario){
+    public void tearDownScenario(Scenario scenario) {
 
-        byte [] screenshot = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-        scenario.attach(screenshot,"image/png", scenario.getName());
+        if (scenario.isFailed()) {
+            byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+        }
 
-
-     //   Driver.closeDriver();
+        Driver.closeDriver();
         // System.out.println("====Closing browser using cucumber @Before");
         //System.out.println("Scenario finished, take SS if fails");
 
     }
 
     @BeforeStep
-    public void setupStep (){
+    public void setupStep() {
         System.out.println("---> applying setup using @BeforeStep");
     }
 
     @AfterStep
-    public void afterStep (){
+    public void afterStep() {
         System.out.println("---> applying tearDown using @AfterStep");
     }
-
-
 
 
 }
