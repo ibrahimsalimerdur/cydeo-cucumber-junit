@@ -1,5 +1,6 @@
 package com.cydeo.step_definitions;
 
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,7 +9,7 @@ public class Wiki_StepDefinition {
 
     @Given("User is on Wikipedia home page")
     public void user_is_on_wikipedia_home_page() {
-
+        Driver.getDriver().get("https://www.wikipedia.org/");
     }
 
     @When("User types {string} in the wiki search box")
