@@ -19,9 +19,20 @@ Feature: Wikipedia search functionality and verifications
 
   Scenario Outline: Wikipedia Search Functionality Header Verification
     Given User is on Wikipedia home page
-    When User types "<searchValues>" in the wiki search box
+    When User types "<searchValue>" in the wiki search box
     And User clicks wiki search button
     Then User sees "<expectedTitle>" is in the main header
     Then User sees "<expectedMainHeader>" is in the main header
 
     Examples: search values we look for in this scenario
+    |searchValue|expectedTitle|expectedMainHeader|
+    |Steve Jobs|Steve Jobs|Steve Jobs|
+    |Cristiano Ronaldo|Cristiano Ronaldo|Cristiano Ronaldo|
+    |Bob Marley|Bob Marley|Bob Marley|
+    |Chuck Norris|Chuck Norris|Chuck Norris|
+    |Antony Hopkins|Antony Hopkins|Antony Hopkins|
+    |Marie Curie|Marie Curie|Marie Curie|
+    |Lady Gaga|Lady Gaga|Lady Gaga|
+    |Kate Winslet|Kate Winslet|Kate Winslet|
+
+
