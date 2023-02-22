@@ -15,7 +15,7 @@ Feature: Wikipedia search functionality and verifications
   And User clicks wiki search button
   Then User sees "Steve Jobs" is in the main header
 
-  @wip_salim
+
 
   Scenario Outline: Wikipedia Search Functionality Header Verification
     Given User is on Wikipedia home page
