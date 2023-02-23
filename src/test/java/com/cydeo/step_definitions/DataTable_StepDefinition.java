@@ -28,7 +28,7 @@ public class DataTable_StepDefinition {
     public void user_should_see_below_info_in_month_dropdown(List<String> expectedMonths) {
         System.out.println("expectedMonths = " + expectedMonths);
 
-        Select select = new Select(dropdownsPage.monthDropdown )
+        Select select = new Select(dropdownsPage.monthDropdown );
     }
 
 
