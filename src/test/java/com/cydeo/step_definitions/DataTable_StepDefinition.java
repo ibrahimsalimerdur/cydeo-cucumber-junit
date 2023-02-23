@@ -4,8 +4,11 @@ import com.cydeo.pages.DropdownsPage;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +32,17 @@ public class DataTable_StepDefinition {
         System.out.println("expectedMonths = " + expectedMonths);
 
         Select select = new Select(dropdownsPage.monthDropdown );
+        List <WebElement> actualOptionsAsWebElement = select.getOptions();
+
+        List<String> actualOptionsAsString = new ArrayList<>();
+
+        for (WebElement each : actualOptionsAsWebElement) {
+            actualOptionsAsString.add(each.getText());
+        }
+
+        Assert.assertEquals(expectedMonths,actualOptionsAsString);
+        
+
     }
 
 
